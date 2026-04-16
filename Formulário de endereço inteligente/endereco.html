@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulário de Endereço</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+
+        .required {
+            color: red;
+        }
+
+        input {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ccc;
+            font-size: 14px;
+        }
+
+        input.error {
+            border: 2px solid red;
+        }
+
+        input[type="submit"] {
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Cadastro de Endereço</h1>
+        
+        <form id="formulario">
+            <!-- Campo CEP -->
+            <div class="form-group">
+                <label for="cep">CEP <span class="required">*</span></label>
+                <input 
+                    type="text" 
+                    id="cep" 
+                    name="cep" 
+                    placeholder="00000-000"
+                    maxlength="9"
+                >
+            </div>
+
+            <!-- Campo Logradouro -->
+            <div class="form-group">
+                <label for="logradouro">Logradouro <span class="required">*</span></label>
+                <input 
+                    type="text" 
+                    id="logradouro" 
+                    name="logradouro" 
+                    placeholder="Ex: Rua das Flores"
+                >
+            </div>
+
+            <!-- Campo Número e UF em linha -->
+            <div class="form-row">
+                <!-- Campo Número -->
+                <div class="form-group">
+                    <label for="numero">Número <span class="required">*</span></label>
+                    <input 
+                        type="text" 
+                        id="numero" 
+                        name="numero" 
+                        placeholder="Ex: 123"
+                    >
+                </div>
+
+                <!-- Campo UF -->
+                <div class="form-group">
+                    <label for="uf">UF <span class="required">*</span></label>
+                    <input 
+                        type="text" 
+                        id="uf" 
+                        name="uf" 
+                        placeholder="Ex: SP"
+                        maxlength="2"
+                    >
+                </div>
+            </div>
+
+            <!-- Campo Complemento -->
+            <div class="form-group">
+                <label for="complemento">Complemento (opcional)</label>
+                <input 
+                    type="text" 
+                    id="complemento" 
+                    name="complemento" 
+                    placeholder="Ex: Apto 101"
+                >
+            </div>
+
+            <!-- Botão Enviar -->
+            <input type="submit" value="Cadastrar">
+        </form>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
